@@ -16,7 +16,13 @@ footer{background:#03110b;color:#dce4df;padding:45px 0 0}.footer-grid{display:gr
 /* WhatsApp */
 .whatsapp-contact-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin-top:18px;padding:13px 18px;background:#168c4a;color:#fff;border:1px solid #168c4a;font:800 15px 'Barlow Condensed',sans-serif;letter-spacing:.04em;transition:transform .2s,filter .2s,box-shadow .2s}.whatsapp-contact-btn:hover{filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 7px 18px rgba(0,0,0,.14)}.wa-icon,.whatsapp-float-icon{display:inline-flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;font-weight:900}.wa-icon{width:20px;height:20px;border:2px solid #fff;border-radius:50%;font-size:13px;line-height:1}.whatsapp-float{position:fixed;right:24px;bottom:24px;z-index:50;display:flex;align-items:center;gap:9px;background:#168c4a;color:#fff;border:2px solid rgba(255,255,255,.9);border-radius:999px;padding:12px 18px 12px 13px;box-shadow:0 8px 24px rgba(0,0,0,.32);font:800 15px 'Barlow Condensed',sans-serif;letter-spacing:.08em;transition:transform .2s,filter .2s,box-shadow .2s}.whatsapp-float:hover{transform:translateY(-3px);filter:brightness(1.08);box-shadow:0 11px 28px rgba(0,0,0,.38)}.whatsapp-float-icon{width:28px;height:28px;border:2px solid #fff;border-radius:50%;font-size:17px}.whatsapp-float:focus-visible,.whatsapp-contact-btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 @media(max-width:760px){.whatsapp-float{right:14px;bottom:14px;padding:11px 15px 11px 12px;font-size:14px}.whatsapp-float-icon{width:27px;height:27px}.whatsapp-contact-btn{width:100%}}
-
-/* Voltar ao topo */
-.back-top-wrap{display:flex;justify-content:center;padding:0 0 26px}.back-top{display:inline-flex;align-items:center;justify-content:center;gap:4px;padding:11px 22px;border:1px solid rgba(244,194,13,.7);color:#fff;background:rgba(244,194,13,.08);font:800 14px 'Barlow Condensed',sans-serif;letter-spacing:.08em;transition:all .2s}.back-top:hover{background:var(--gold);color:#06150f;transform:translateY(-2px);box-shadow:0 7px 18px rgba(0,0,0,.2)}.back-top:focus-visible{outline:3px solid #fff;outline-offset:3px}
-@media(max-width:760px){.back-top-wrap{padding-bottom:22px}.back-top{width:calc(100% - 28px)}}
+/* Jornada de Formação — 18 meses */
+.formation-journey{margin-top:55px;padding-top:42px;border-top:1px solid rgba(6,21,15,.18)}
+.formation-journey-head{text-align:center;max-width:850px;margin:0 auto 28px}
+.formation-journey-head .section-title{justify-content:center}
+.formation-journey-head h3{font:900 34px/1.05 'Barlow Condensed',sans-serif;margin:14px 0 7px;color:#092419}
+.formation-journey-head p{margin:0;font-size:14px;color:#34413a}
+.formation-infographic{margin:0;background:#06150f;border:1px solid rgba(244,194,13,.55);box-shadow:0 18px 45px rgba(0,0,0,.18);overflow:hidden}
+.formation-infographic img{width:100%;height:auto;display:block}
+.formation-infographic figcaption{padding:10px 15px;text-align:center;background:#071b12;color:#e9eee9;font-size:11px;letter-spacing:.04em}
+@media(max-width:760px){.formation-journey{margin-top:38px;padding-top:30px}.formation-journey-head h3{font-size:29px}.formation-infographic{border-left:0;border-right:0}.formation-infographic figcaption{font-size:10px;padding:9px 10px}}
