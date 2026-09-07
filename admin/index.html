@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PJM — Central de Inscrições</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+:root{--verde:#06291f;--verde2:#0b3b2c;--dourado:#d6b84c;--fundo:#f3f1ea;--borda:#d7dbd4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fundo);color:#17251f;font-family:Arial,Helvetica,sans-serif}
+button,input,select,textarea{font:inherit}
+.admin{max-width:1450px;margin:auto;padding:25px 18px 60px}
+.admin-head{background:linear-gradient(110deg,#05261d,#0b3a2b);color:#fff;border-radius:8px;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:18px;box-shadow:0 5px 20px #0001}
+.brand{display:flex;align-items:center;gap:16px}.brand img{width:64px;height:76px;object-fit:contain}.eyebrow{color:var(--dourado);font-size:13px;font-weight:800;letter-spacing:1.2px}.brand h1{margin:3px 0 0;font-size:27px}
+.btn{border:0;border-radius:5px;padding:10px 14px;font-weight:800;cursor:pointer}.btn-gold{background:var(--dourado);color:#17210e}.btn-light{background:#fff;color:#173228;border:1px solid #ccd2cc}.btn-dark{background:var(--verde);color:#fff}.btn:hover{filter:brightness(.96)}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:18px 0}.metric{background:#fff;border:1px solid var(--borda);padding:17px;border-radius:5px}.metric span{display:block;color:#64716b;font-size:14px}.metric b{display:block;font-size:29px;color:var(--verde);margin-top:5px}
+.toolbar{background:#fff;border:1px solid var(--borda);padding:14px;display:flex;gap:9px;flex-wrap:wrap;align-items:center}.toolbar input,.toolbar select{padding:11px 12px;border:1px solid #cbd1cb;border-radius:5px;background:#fff}.toolbar input{min-width:285px}.toolbar .date{min-width:145px}
+.table-wrap{margin-top:14px;overflow:auto;background:#fff;border:1px solid var(--borda);border-radius:5px}.table{width:100%;border-collapse:collapse;min-width:1150px}.table th,.table td{padding:12px 11px;border-bottom:1px solid #e6e8e4;text-align:left;font-size:13px}.table th{background:#e9eee9;color:#173128;position:sticky;top:0}.table tr:hover{background:#fafbf8}
+.status{display:inline-block;padding:5px 9px;border-radius:20px;font-size:11px;font-weight:800;white-space:nowrap}.st-pendente{background:#fff1c7;color:#775600}.st-analise{background:#dcecff;color:#164d80}.st-aprovada{background:#dff2df;color:#205f2c}.st-convocada{background:#e9ddff;color:#56318a}.st-concluida{background:#d7eee8;color:#15594b}.st-indeferida,.st-cancelada{background:#f5dddd;color:#8a2525}.st-default{background:#e9ece9;color:#3c4842}
+.login{max-width:440px;margin:70px auto;background:#fff;padding:30px;border:1px solid var(--borda);border-radius:7px;box-shadow:0 10px 35px #0001}.login h1{margin-top:0;color:var(--verde)}.login label{display:block;font-weight:700;margin-top:12px}.login input{width:100%;padding:12px;margin-top:6px;border:1px solid #cbd1cb;border-radius:5px}.login button{width:100%;margin-top:18px}.error{color:#a52c25;min-height:20px}
+.modal{display:none;position:fixed;inset:0;background:#0009;z-index:50;padding:18px;overflow:auto}.modal-box{background:#fff;max-width:1000px;margin:20px auto;border-radius:7px;padding:25px;box-shadow:0 20px 60px #0005}.modal-head{display:flex;justify-content:space-between;gap:15px;align-items:flex-start;border-bottom:1px solid #ddd;padding-bottom:14px}.modal-head h2{margin:0;color:var(--verde)}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.detail{background:#f4f6f2;padding:11px;border-radius:4px;min-height:56px}.detail b{display:block;font-size:10px;text-transform:uppercase;color:#69766f;margin-bottom:4px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.edit-box{background:#f1f4ef;padding:16px;margin-top:18px;border-radius:5px}.edit-box select,.edit-box textarea{width:100%;padding:11px;border:1px solid #cbd1cb;border-radius:5px;background:#fff}.edit-box textarea{min-height:95px;margin-top:7px;resize:vertical}
+.empty{text-align:center;padding:35px;color:#6b7770}.count-info{margin:12px 2px;color:#68746e;font-size:13px}
+#toast{position:fixed;right:20px;bottom:20px;background:var(--verde);color:#fff;padding:13px 17px;border-radius:5px;display:none;z-index:100}
+@media(max-width:1050px){.cards{grid-template-columns:repeat(3,1fr)}}@media(max-width:700px){.cards{grid-template-columns:1fr 1fr}.detail-grid{grid-template-columns:1fr}.admin-head{align-items:flex-start;flex-direction:column}.toolbar input{min-width:100%}}
+.ficha-modal{max-width:1050px;padding:28px 30px}.ficha-title-wrap h2{margin:4px 0 2px;font-size:25px}.ficha-subtitle{font-size:12px;color:#718078}.modal-head-actions{display:flex;align-items:center;gap:10px}.ficha-section{margin-top:18px;border:1px solid #dfe4de;border-radius:6px;overflow:hidden}.ficha-section-title{display:flex;align-items:center;gap:12px;background:#edf1ec;border-bottom:1px solid #dfe4de;padding:11px 13px}.ficha-section-title>span{display:grid;place-items:center;width:30px;height:30px;border-radius:4px;background:var(--verde);color:#fff;font-size:11px;font-weight:800}.ficha-section-title b{display:block;color:#173128;font-size:12px;letter-spacing:.5px}.ficha-section-title small{display:block;color:#738078;font-size:11px;margin-top:2px}.ficha-section .detail-grid{margin:0;padding:12px}.ficha-section .detail{background:#fafbf9;border:1px solid #e4e8e3}.ficha-print-head{display:none}.print-protocol{font-weight:800;color:var(--verde);font-size:13px}.ficha-footer{display:flex;justify-content:space-between;border-top:1px solid #d9ded9;margin-top:22px;padding-top:10px;font-size:10px;color:#77827c;text-transform:uppercase;letter-spacing:.5px}
+@media print{
+ body{background:#fff}.admin>header,.cards,.toolbar,.count-info,#login,#toast{display:none!important}.admin{padding:0;max-width:none}.modal{position:static;background:#fff;padding:0;display:block!important}.modal-box{box-shadow:none;max-width:none;margin:0;padding:0}.modal-head .no-print,.actions,.edit-box{display:none!important}.detail-grid{grid-template-columns:1fr 1fr}.detail{border:1px solid #ddd;background:#fff}.print-title{display:block!important}
+}
+.print-title{display:none}
+</style>
+</head>
+<body>
+<main class="admin">
+<section id="login" class="login">
+<h1>PJM — Administração</h1>
+<p>Área restrita para gestão das fichas de inscrição do Projeto Jovem Militar.</p>
+<label>E-mail</label><input id="email" type="email" autocomplete="username">
+<label>Senha</label><input id="password" type="password" autocomplete="current-password">
+<button id="loginBtn" class="btn btn-gold">ENTRAR NO PAINEL</button>
+<p id="loginMsg" class="error"></p>
+</section>
+
+<section id="dashboard" hidden>
+<header class="admin-head">
+<div class="brand"><img src="../assets/brasao-comando-geral.png"><div><div class="eyebrow">PROJETO JOVEM MILITAR • COMANDO GERAL</div><h1>Central de Inscrições</h1></div></div>
+<button id="logout" class="btn btn-gold">SAIR</button>
+</header>
+
+<div class="cards">
+<div class="metric"><span>Total</span><b id="mTotal">0</b></div>
+<div class="metric"><span>Pendentes</span><b id="mPending">0</b></div>
+<div class="metric"><span>Em análise</span><b id="mAnalysis">0</b></div>
+<div class="metric"><span>Aprovadas</span><b id="mApproved">0</b></div>
+<div class="metric"><span>Convocadas</span><b id="mCalled">0</b></div>
+</div>
+
+<div class="toolbar">
+<input id="search" placeholder="Buscar nome, protocolo, cidade ou responsável">
+<select id="statusFilter"><option value="">Todos os status</option><option>Pendente</option><option>Em análise</option><option>Aprovada</option><option>Convocada</option><option>Concluída</option><option>Indeferida</option><option>Cancelada</option></select>
+<select id="unitFilter"><option value="">Todas as unidades</option></select>
+<select id="cityFilter"><option value="">Todas as cidades</option></select>
+<input id="dateFrom" class="date" type="date" title="Data inicial">
+<input id="dateTo" class="date" type="date" title="Data final">
+<button id="clearFilters" class="btn btn-light">LIMPAR FILTROS</button>
+<button id="refresh" class="btn btn-dark">ATUALIZAR</button>
+</div>
+
+<div class="count-info" id="countInfo"></div>
+<div class="table-wrap"><table class="table"><thead><tr>
+<th>Protocolo</th><th>Data</th><th>Aluno</th><th>Idade</th><th>Cidade</th><th>Unidade</th><th>Responsável</th><th>WhatsApp</th><th>Status</th><th>Ação</th>
+</tr></thead><tbody id="rows"></tbody></table></div>
+</section>
+</main>
+
+<div class="modal" id="modal">
+<div class="modal-box ficha-modal">
+<div class="print-title ficha-print-head"><div><h1>PROJETO JOVEM MILITAR</h1><p>ESCOLA PREPARATÓRIA PRÉ-MILITAR DO ESPÍRITO SANTO • COMANDO GERAL</p></div><div class="print-protocol" id="printProtocol">FICHA DE INSCRIÇÃO</div></div>
+<div class="modal-head">
+  <div class="ficha-title-wrap"><div class="eyebrow">CENTRAL DE INSCRIÇÕES • FICHA COMPLETA</div><h2 id="detailTitle">Ficha</h2><div class="ficha-subtitle">Dados cadastrais apresentados exclusivamente para gestão administrativa.</div></div>
+  <div class="no-print modal-head-actions"><span id="detailStatusBadge" class="status st-default">Pendente</span><button id="close" class="btn btn-light">FECHAR</button></div>
+</div>
+<div class="actions no-print">
+<button id="whatsappBtn" class="btn btn-dark">ABRIR WHATSAPP</button>
+<button id="printBtn" class="btn btn-light">IMPRIMIR / SALVAR PDF</button>
+</div>
+<div class="ficha-section"><div class="ficha-section-title"><span>01</span><div><b>IDENTIFICAÇÃO DO ALUNO</b><small>Dados pessoais e escolares</small></div></div><div class="detail-grid" id="detailStudent"></div></div>
+<div class="ficha-section"><div class="ficha-section-title"><span>02</span><div><b>RESPONSÁVEL</b><small>Dados de contato e vínculo</small></div></div><div class="detail-grid" id="detailGuardian"></div></div>
+<div class="ficha-section"><div class="ficha-section-title"><span>03</span><div><b>ENDEREÇO E LOCALIDADE</b><small>Informações de residência e unidade</small></div></div><div class="detail-grid" id="detailAddress"></div></div>
+<div class="ficha-section"><div class="ficha-section-title"><span>04</span><div><b>INTERESSE NO PROJETO</b><small>Preferências informadas na inscrição</small></div></div><div class="detail-grid" id="detailInterest"></div></div>
+<div class="ficha-section"><div class="ficha-section-title"><span>05</span><div><b>OBSERVAÇÕES E REGISTRO</b><small>Informações complementares da ficha</small></div></div><div class="detail-grid" id="detailNotes"></div></div>
+<div class="edit-box no-print">
+<label><b>Status da inscrição</b></label>
+<select id="detailStatus" style="margin-top:7px"><option>Pendente</option><option>Em análise</option><option>Aprovada</option><option>Convocada</option><option>Concluída</option><option>Indeferida</option><option>Cancelada</option></select>
+<label style="display:block;margin-top:13px"><b>Observação interna</b></label>
+<textarea id="adminNotes" placeholder="Anotações administrativas, sem dados médicos ou sensíveis."></textarea>
+<button id="saveDetail" class="btn btn-gold" style="margin-top:10px">SALVAR ALTERAÇÕES</button>
+</div>
+<div class="ficha-footer"><span>Projeto Jovem Militar • Comando Geral</span><span id="fichaFooterProtocol"></span></div>
+</div>
+</div>
+<div id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../config.js"></script>
+<script>
+let client=null,current=null,all=[];
+const $=id=>document.getElementById(id);
+
+function showToast(msg){$('toast').textContent=msg;$('toast').style.display='block';setTimeout(()=>$('toast').style.display='none',2500)}
+function esc(s){return String(s??'').replace(/[&<>'"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[m]))}
+function age(d){if(!d)return '—';const b=new Date(d+'T00:00:00'),n=new Date();let a=n.getFullYear()-b.getFullYear();if(n.getMonth()<b.getMonth()||(n.getMonth()===b.getMonth()&&n.getDate()<b.getDate()))a--;return a}
+function fmtDate(d){if(!d)return '—';return new Date(d+'T00:00:00').toLocaleDateString('pt-BR')}
+function statusClass(s){return {'Pendente':'st-pendente','Em análise':'st-analise','Aprovada':'st-aprovada','Convocada':'st-convocada','Concluída':'st-concluida','Indeferida':'st-indeferida','Cancelada':'st-cancelada'}[s]||'st-default'}
+function phoneDigits(s){return String(s||'').replace(/\D/g,'')}
+
+async function load(){
+ const {data,error}=await client.from('inscricoes').select('*').order('criado_em',{ascending:false});
+ if(error){alert('Erro ao carregar inscrições: '+error.message);return}
+ all=data||[];populateFilters();render();
+}
+function populateFilters(){
+ const units=[...new Set(all.map(x=>x.unidade_interesse).filter(Boolean))].sort();
+ const cities=[...new Set(all.map(x=>x.cidade).filter(Boolean))].sort();
+ $('unitFilter').innerHTML='<option value="">Todas as unidades</option>'+units.map(x=>'<option>'+esc(x)+'</option>').join('');
+ $('cityFilter').innerHTML='<option value="">Todas as cidades</option>'+cities.map(x=>'<option>'+esc(x)+'</option>').join('');
+}
+function filtered(){
+ const q=$('search').value.trim().toLowerCase(),st=$('statusFilter').value,u=$('unitFilter').value,c=$('cityFilter').value,from=$('dateFrom').value,to=$('dateTo').value;
+ return all.filter(r=>{
+  const hay=[r.protocolo,r.nome_aluno,r.cidade,r.nome_responsavel,r.telefone_responsavel].join(' ').toLowerCase();
+  const day=r.criado_em?String(r.criado_em).slice(0,10):'';
+  return (!q||hay.includes(q))&&(!st||r.status===st)&&(!u||r.unidade_interesse===u)&&(!c||r.cidade===c)&&(!from||day>=from)&&(!to||day<=to);
+ });
+}
+function render(){
+ $('mTotal').textContent=all.length;
+ $('mPending').textContent=all.filter(x=>x.status==='Pendente').length;
+ $('mAnalysis').textContent=all.filter(x=>x.status==='Em análise').length;
+ $('mApproved').textContent=all.filter(x=>x.status==='Aprovada').length;
+ $('mCalled').textContent=all.filter(x=>x.status==='Convocada').length;
+ const data=filtered();
+ $('countInfo').textContent='Exibindo '+data.length+' de '+all.length+' inscrição(ões).';
+ if(!data.length){$('rows').innerHTML='<tr><td colspan="10" class="empty">Nenhuma inscrição encontrada com os filtros atuais.</td></tr>';return}
+ $('rows').innerHTML=data.map(r=>`<tr>
+ <td><b>${esc(r.protocolo)}</b></td><td>${fmtDate(r.criado_em)}</td><td><b>${esc(r.nome_aluno)}</b></td>
+ <td>${age(r.data_nascimento)}</td><td>${esc(r.cidade)}</td><td>${esc(r.unidade_interesse)}</td>
+ <td>${esc(r.nome_responsavel)}</td><td>${esc(r.telefone_responsavel)}</td>
+ <td><span class="status ${statusClass(r.status)}">${esc(r.status||'Pendente')}</span></td>
+ <td><button class="btn btn-light" onclick="openDetail('${r.id}')">VER</button></td></tr>`).join('');
+}
+window.openDetail=function(id){
+ current=all.find(r=>r.id===id);if(!current)return;
+ const status=current.status||'Pendente';
+ $('detailTitle').textContent=(current.protocolo||'Ficha')+' • '+(current.nome_aluno||'');
+ $('printProtocol').textContent='PROTOCOLO '+(current.protocolo||'—');
+ $('fichaFooterProtocol').textContent=current.protocolo||'';
+ $('detailStatus').value=status;$('adminNotes').value=current.observacao_interna||'';
+ $('detailStatusBadge').textContent=status;$('detailStatusBadge').className='status '+statusClass(status);
+ const endereco=[current.endereco,current.numero_endereco].filter(Boolean).join(', ');
+ const put=(id,fields)=>$(id).innerHTML=fields.map(x=>`<div class="detail"><b>${esc(x[0])}</b>${esc(x[1]??'—')}</div>`).join('');
+ put('detailStudent',[
+  ['Protocolo',current.protocolo],['Data da inscrição',fmtDate(current.criado_em)],['Aluno',current.nome_aluno],['Nascimento',fmtDate(current.data_nascimento)],['Idade',age(current.data_nascimento)],['Escola',current.escola],['Série',current.serie]
+ ]);
+ put('detailGuardian',[
+  ['Responsável',current.nome_responsavel],['Parentesco',current.parentesco],['CPF do responsável',current.cpf_responsavel],['WhatsApp',current.telefone_responsavel],['E-mail',current.email_responsavel]
+ ]);
+ put('detailAddress',[
+  ['Endereço',endereco],['Bairro',current.bairro],['Cidade',current.cidade],['Unidade de interesse',current.unidade_interesse]
+ ]);
+ put('detailInterest',[
+  ['Turno preferencial',current.turno_preferencial],['Como conheceu o PJM',current.como_conheceu],['Participou anteriormente',current.participou_anteriormente?'Sim':'Não']
+ ]);
+ put('detailNotes',[
+  ['Observações do responsável',current.observacoes||'—'],['Status atual',status],['Última atualização',current.atualizado_em?new Date(current.atualizado_em).toLocaleString('pt-BR'):'Ainda não atualizada']
+ ]);
+ $('modal').style.display='block';
+}
+$('close').onclick=()=>$('modal').style.display='none';
+$('modal').addEventListener('click',e=>{if(e.target===$('modal'))$('modal').style.display='none'});
+$('printBtn').onclick=()=>window.print();
+$('whatsappBtn').onclick=()=>{const p=phoneDigits(current?.telefone_responsavel);if(!p){alert('Não há telefone cadastrado para esta inscrição.');return}const br=p.startsWith('55')?p:'55'+p;window.open('https://wa.me/'+br,'_blank','noopener')};
+$('saveDetail').onclick=async()=>{
+ if(!current)return;
+ const {error}=await client.from('inscricoes').update({status:$('detailStatus').value,observacao_interna:$('adminNotes').value,atualizado_em:new Date().toISOString()}).eq('id',current.id);
+ if(error){alert('Erro ao salvar: '+error.message);return}
+ showToast('Alterações salvas com sucesso.');$('modal').style.display='none';await load();
+};
+$('loginBtn').onclick=login;
+$('password').addEventListener('keydown',e=>{if(e.key==='Enter')login()});
+async function login(){
+ if(!window.PJM_CONFIG||!PJM_CONFIG.supabaseUrl||PJM_CONFIG.supabaseUrl.includes('COLE_AQUI')){$('loginMsg').textContent='O arquivo config.js não está configurado.';return}
+ client=supabase.createClient(PJM_CONFIG.supabaseUrl,PJM_CONFIG.supabaseAnonKey);
+ const {error}=await client.auth.signInWithPassword({email:$('email').value.trim(),password:$('password').value});
+ if(error){$('loginMsg').textContent='Não foi possível entrar: '+error.message;return}
+ $('login').hidden=true;$('dashboard').hidden=false;await load();
+}
+$('logout').onclick=async()=>{if(client)await client.auth.signOut();location.reload()};
+$('refresh').onclick=load;
+$('clearFilters').onclick=()=>{$('search').value='';$('statusFilter').value='';$('unitFilter').value='';$('cityFilter').value='';$('dateFrom').value='';$('dateTo').value='';render()};
+['search','statusFilter','unitFilter','cityFilter','dateFrom','dateTo'].forEach(id=>$(id).addEventListener('input',render));
+</script>
+</body>
+</html>
