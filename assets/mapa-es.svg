@@ -1,12 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 620" role="img" aria-label="Mapa do Espírito Santo">
-  <defs>
-    <linearGradient id="esFill" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#174f43"/>
-      <stop offset="1" stop-color="#0d302b"/>
-    </linearGradient>
-  </defs>
-  <path d="M103 18 L157 10 L209 18 L254 35 L296 49 L321 77 L326 108 L337 136 L327 164 L335 193 L325 222 L335 249 L326 276 L335 302 L329 333 L340 360 L328 390 L334 420 L321 450 L307 476 L292 501 L273 525 L249 544 L225 560 L201 573 L178 579 L158 568 L145 548 L127 532 L112 510 L96 489 L82 466 L72 439 L60 413 L54 385 L47 355 L52 325 L45 297 L53 269 L47 240 L57 213 L53 186 L67 160 L62 132 L75 108 L69 82 L83 59 Z"
-    fill="url(#esFill)" stroke="#d6aa37" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M91 72 L124 58 M75 126 L110 111 M60 184 L99 170 M53 246 L94 230 M50 306 L91 292 M61 367 L101 352 M79 428 L119 412 M105 485 L145 465 M140 530 L178 505 M188 559 L213 529 M231 548 L253 514 M275 509 L290 476 M302 451 L314 417 M311 390 L323 359 M313 330 L327 300 M314 268 L326 238 M315 206 L327 178 M312 145 L323 118" fill="none" stroke="#3b7568" stroke-width="2" opacity=".45"/>
-  <text x="183" y="315" fill="#e8eee9" font-family="Arial, sans-serif" font-size="46" font-weight="700" opacity=".85">ES</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 790" role="img" aria-label="Mapa do Espírito Santo">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#1c6654"/>
+    <stop offset="1" stop-color="#0b3029"/>
+  </linearGradient>
+</defs>
+<path d="M170 20 L235 10 L302 27 L354 53 L403 76 L436 111 L448 151 L438 191 L454 226 L443 266 L451 307 L442 345 L455 382 L443 424 L431 468 L415 510 L393 550 L373 586 L348 621 L321 651 L292 678 L263 700 L232 720 L204 727 L179 716 L158 696 L141 671 L120 650 L104 623 L89 593 L77 560 L63 526 L57 491 L49 456 L54 421 L47 386 L53 351 L47 315 L57 281 L53 247 L64 214 L61 180 L74 151 L70 119 L88 93 L84 65 L111 45 L137 34 Z"
+ fill="url(#g)" stroke="#d7b84b" stroke-width="5" stroke-linejoin="round"/>
+<!-- stylized municipal divisions -->
+<g fill="none" stroke="#5b9484" stroke-width="2" opacity=".38">
+<path d="M98 105 L180 135 L270 112 L360 145 L425 130"/>
+<path d="M72 175 L160 205 L255 178 L350 210 L438 195"/>
+<path d="M57 250 L150 278 L246 247 L342 282 L448 267"/>
+<path d="M52 326 L146 350 L239 321 L335 355 L451 344"/>
+<path d="M55 403 L145 426 L230 397 L330 432 L446 422"/>
+<path d="M67 480 L153 502 L244 474 L332 508 L427 486"/>
+<path d="M83 554 L165 574 L250 547 L340 579 L404 550"/>
+<path d="M110 624 L186 638 L264 613 L330 635 L377 602"/>
+<path d="M145 676 L215 687 L280 665 L331 641"/>
+<path d="M120 78 L145 185 L130 290 L151 390 L133 492 L165 600 L179 716"/>
+<path d="M220 22 L234 126 L217 230 L245 330 L229 440 L257 540 L244 650 L232 720"/>
+<path d="M315 31 L302 135 L326 238 L305 342 L333 445 L314 545 L321 651"/>
+<path d="M397 75 L371 170 L405 275 L379 380 L410 480 L373 586"/>
+</g>
+<text x="190" y="405" fill="#eef5f0" font-family="Arial, sans-serif" font-size="58" font-weight="800" letter-spacing="4" opacity=".88">ES</text>
+<text x="142" y="446" fill="#d7b84b" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">ESPÍRITO SANTO</text>
 </svg>
