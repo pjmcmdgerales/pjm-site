@@ -49,3 +49,13 @@
 /* Mapa geográfico real do Espírito Santo — silhueta oficial/referência cartográfica externa */
 .es-map-image{width:220px;height:385px;object-fit:contain;filter:brightness(0) saturate(100%) invert(18%) sepia(34%) saturate(1045%) hue-rotate(123deg) brightness(88%) contrast(94%) drop-shadow(0 10px 18px rgba(0,0,0,.30));}
 .map-source{width:calc(100% - 30px);text-align:center;color:rgba(255,255,255,.48);font-size:8px;letter-spacing:.4px;margin-top:-2px;}
+
+
+/* --- MAPA BRASIL + ESPIRITO SANTO (PNG FORNECIDO) --- */
+.map-panel{width:46%;}
+.map-wrap.brasil-map-wrap{width:390px;height:390px;flex:0 0 390px;margin:0 auto;}
+.es-map-image.brasil-es-map{width:390px;height:390px;object-fit:contain;filter:drop-shadow(0 12px 22px rgba(0,0,0,.30));}
+.map-source{width:100%;max-width:410px;text-align:center;color:rgba(255,255,255,.48);font-size:8px;letter-spacing:.4px;margin-top:-1px;}
+@media(max-width:1100px){.map-layout{gap:8px}.map-wrap.brasil-map-wrap{width:330px;height:330px;flex-basis:330px}.es-map-image.brasil-es-map{width:330px;height:330px}.map-list{min-width:180px}}
+@media(max-width:900px){.map-panel{width:100%;}.map-layout{flex-direction:column}.map-wrap.brasil-map-wrap{width:360px;height:360px;flex-basis:360px}.es-map-image.brasil-es-map{width:360px;height:360px}.map-list{width:100%;max-width:330px}}
+@media(max-width:600px){.map-wrap.brasil-map-wrap{width:300px;height:300px;flex-basis:300px}.es-map-image.brasil-es-map{width:300px;height:300px}}
