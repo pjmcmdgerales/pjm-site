@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 620" role="img" aria-label="Mapa do Espírito Santo">
+  <defs>
+    <linearGradient id="esFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#174f43"/>
+      <stop offset="1" stop-color="#0d302b"/>
+    </linearGradient>
+  </defs>
+  <path d="M103 18 L157 10 L209 18 L254 35 L296 49 L321 77 L326 108 L337 136 L327 164 L335 193 L325 222 L335 249 L326 276 L335 302 L329 333 L340 360 L328 390 L334 420 L321 450 L307 476 L292 501 L273 525 L249 544 L225 560 L201 573 L178 579 L158 568 L145 548 L127 532 L112 510 L96 489 L82 466 L72 439 L60 413 L54 385 L47 355 L52 325 L45 297 L53 269 L47 240 L57 213 L53 186 L67 160 L62 132 L75 108 L69 82 L83 59 Z"
+    fill="url(#esFill)" stroke="#d6aa37" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M91 72 L124 58 M75 126 L110 111 M60 184 L99 170 M53 246 L94 230 M50 306 L91 292 M61 367 L101 352 M79 428 L119 412 M105 485 L145 465 M140 530 L178 505 M188 559 L213 529 M231 548 L253 514 M275 509 L290 476 M302 451 L314 417 M311 390 L323 359 M313 330 L327 300 M314 268 L326 238 M315 206 L327 178 M312 145 L323 118" fill="none" stroke="#3b7568" stroke-width="2" opacity=".45"/>
+  <text x="183" y="315" fill="#e8eee9" font-family="Arial, sans-serif" font-size="46" font-weight="700" opacity=".85">ES</text>
+</svg>
