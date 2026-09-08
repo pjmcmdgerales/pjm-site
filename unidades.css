@@ -23,3 +23,25 @@
   z-index:3;
 }
 .map-wrap .map-pin i{width:6px;height:6px;border-radius:50%;background:#fff;display:block;margin:3px auto}
+
+/* --- mapa institucional final --- */
+.map-panel{width:46%;padding:48px 4% 44px 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.map-heading{width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px}
+.map-heading span{font-size:12px;letter-spacing:3px;color:#d7b84b;font-weight:800}
+.map-heading small{font-size:11px;color:#cbd7d0;letter-spacing:1.4px}
+.map-layout{width:100%;display:flex;align-items:center;justify-content:center;gap:18px}
+.map-wrap{position:relative;width:255px;height:395px;display:flex;align-items:center;justify-content:center;flex:0 0 255px}
+.es-map-image{display:block;width:245px;height:385px;object-fit:contain;filter:drop-shadow(0 0 18px rgba(52,151,116,.18))}
+.map-pin{position:absolute;width:17px;height:17px;border-radius:50%;border:2px solid #071915;box-shadow:0 0 0 2px rgba(255,255,255,.16);transform:translate(-50%,-50%);z-index:4}
+.map-pin i{width:7px;height:7px;border-radius:50%;background:#fff;display:block;margin:3px auto}
+.map-pin.active{background:#18c866}.map-pin.implantation{background:#f3c500}.map-pin.expansion{background:#ff8a2a}
+.map-list{min-width:205px;display:flex;flex-direction:column;gap:12px}
+.map-list>div{display:grid;grid-template-columns:12px 1fr;column-gap:9px;align-items:center;color:#eef4ef;font-size:13px}
+.map-list>div small{grid-column:2;color:#8ea69b;font-size:10px;margin-top:2px}
+.dot{width:10px;height:10px;border-radius:50%;display:block}
+.active-dot{background:#18c866}.yellow-dot{background:#f3c500}.orange-dot{background:#ff8a2a}
+.ba-item{border-top:1px solid rgba(215,184,75,.35);padding-top:12px;margin-top:3px}
+.ba-note{width:calc(100% - 30px);border:1px solid rgba(215,184,75,.55);background:rgba(4,23,19,.45);padding:12px 15px;display:flex;align-items:center;gap:12px}
+.ba-note strong{color:#d7b84b;font-size:10px;letter-spacing:1.5px}.ba-note span{color:#fff;font-weight:800;font-size:13px}.ba-note small{color:#9fb1a8;font-size:10px}
+@media(max-width:980px){.map-panel{width:100%;padding:34px 6%}.map-layout{gap:8px}}
+@media(max-width:600px){.map-layout{flex-direction:column}.map-wrap{width:210px;height:330px;flex-basis:330px}.es-map-image{width:205px;height:320px}.map-list{width:100%;max-width:300px}.ba-note{width:100%;flex-wrap:wrap}}
