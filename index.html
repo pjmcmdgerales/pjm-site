@@ -8,141 +8,52 @@
 <title>Projeto Jovem Militar | Comando Geral</title>
 <link rel="icon" href="assets/brasao-comando-geral.png">
 <link rel="stylesheet" href="style.css">
-<style>
-
-/* CABEÇALHO PJM — PADRÃO ÚNICO */
-.site-header .header-inner{
-  display:grid;
-  grid-template-columns: 520px minmax(0,1fr);
-  align-items:center;
-  column-gap:34px;
-  min-height:132px;
-}
-.site-header .brand{
-  display:flex;
-  align-items:center;
-  gap:16px;
-  min-width:0;
-  width:100%;
-  text-decoration:none;
-}
-.site-header .brand img{
-  width:88px;
-  height:108px;
-  object-fit:contain;
-  flex:0 0 auto;
-}
-.site-header .brand-copy{
-  min-width:0;
-  white-space:nowrap;
-}
-.site-header .brand-copy strong{
-  display:block;
-  font-size:26px;
-  line-height:1.05;
-  white-space:nowrap;
-}
-.site-header .brand-copy small{
-  display:block;
-  margin-top:6px;
-  font-size:11px;
-  line-height:1.25;
-  white-space:nowrap;
-}
-.site-header .brand-copy em{
-  display:block;
-  margin-top:9px;
-  font-size:10px;
-  letter-spacing:6px;
-  font-style:normal;
-  white-space:nowrap;
-}
-.site-header .nav{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:30px;
-  min-width:0;
-  width:100%;
-  flex-wrap:nowrap;
-}
-.site-header .nav a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  white-space:nowrap;
-  font-size:12.5px;
-  letter-spacing:.35px;
-  text-decoration:none;
-  position:relative;
-  padding:14px 0;
-}
-.site-header .nav a.active::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  height:2px;
-  background:currentColor;
-}
-.site-header .header-register{display:none !important;}
+</head>
+<style id="pjm-header-final">
+.site-header .header-inner{display:flex;align-items:center;gap:28px;width:100%;box-sizing:border-box;padding-right:32px;}
+.site-header .brand{display:flex;align-items:center;gap:16px;flex:0 0 500px;min-width:0;text-decoration:none;}
+.site-header .brand img{width:88px;height:108px;object-fit:contain;flex:0 0 auto;}
+.site-header .brand-copy{min-width:0;white-space:nowrap;}
+.site-header .brand-copy strong{display:block;font-size:26px;line-height:1.05;white-space:nowrap;}
+.site-header .brand-copy small{display:block;margin-top:6px;font-size:11px;line-height:1.25;white-space:nowrap;}
+.site-header .brand-copy em{display:block;margin-top:9px;font-size:10px;letter-spacing:6px;font-style:normal;white-space:nowrap;}
+.site-header .nav{display:flex;align-items:center;justify-content:flex-end;gap:25px;flex:1 1 auto;min-width:0;margin-left:auto;flex-wrap:nowrap;}
+.site-header .nav a{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font-size:12.5px;letter-spacing:.35px;text-decoration:none;position:relative;padding:14px 0;}
+.site-header .nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:currentColor;}
+.site-header .header-register{display:none!important;}
 .site-header .menu-toggle{display:none;}
-
-@media (max-width:1400px){
-  .site-header .header-inner{grid-template-columns:470px minmax(0,1fr);column-gap:24px;}
-  .site-header .brand img{width:78px;height:96px;}
-  .site-header .brand-copy strong{font-size:23px;}
-  .site-header .brand-copy small{font-size:10px;}
-  .site-header .brand-copy em{font-size:9px;letter-spacing:5px;}
-  .site-header .nav{gap:22px;}
-  .site-header .nav a{font-size:11.5px;}
+@media(max-width:1400px){
+ .site-header .header-inner{padding-right:26px;gap:22px;}
+ .site-header .brand{flex-basis:450px;}
+ .site-header .brand img{width:78px;height:96px;}
+ .site-header .brand-copy strong{font-size:23px;}
+ .site-header .brand-copy small{font-size:10px;}
+ .site-header .brand-copy em{font-size:9px;letter-spacing:5px;}
+ .site-header .nav{gap:19px;}
+ .site-header .nav a{font-size:11.5px;}
 }
-
-@media (max-width:1120px){
-  .site-header .header-inner{grid-template-columns:410px minmax(0,1fr);column-gap:18px;}
-  .site-header .brand img{width:70px;height:86px;}
-  .site-header .brand-copy strong{font-size:20px;}
-  .site-header .brand-copy small{font-size:9px;}
-  .site-header .brand-copy em{font-size:8px;letter-spacing:4px;}
-  .site-header .nav{gap:16px;}
-  .site-header .nav a{font-size:10.5px;}
+@media(max-width:1120px){
+ .site-header .header-inner{padding-right:18px;gap:16px;}
+ .site-header .brand{flex-basis:390px;}
+ .site-header .brand img{width:70px;height:86px;}
+ .site-header .brand-copy strong{font-size:20px;}
+ .site-header .brand-copy small{font-size:9px;}
+ .site-header .brand-copy em{font-size:8px;letter-spacing:4px;}
+ .site-header .nav{gap:13px;}
+ .site-header .nav a{font-size:10.5px;}
 }
-
-@media (max-width:900px){
-  .site-header .header-inner{display:flex;min-height:88px;gap:12px;}
-  .site-header .brand{flex:1;}
-  .site-header .brand img{width:58px;height:72px;}
-  .site-header .brand-copy strong{font-size:19px;}
-  .site-header .brand-copy small{font-size:9px;}
-  .site-header .brand-copy em{font-size:8px;letter-spacing:3px;}
-  .site-header .nav{display:none;position:absolute;left:0;right:0;top:100%;z-index:100;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;padding:12px 24px;background:#062219;}
-  .site-header .nav.open{display:flex;}
-  .site-header .nav a{justify-content:flex-start;padding:13px 0;font-size:12px;}
-  .site-header .nav a.active::after{left:auto;width:40px;right:auto;bottom:6px;}
-  .site-header .menu-toggle{display:block;margin-left:auto;background:transparent;border:0;color:inherit;font-size:26px;cursor:pointer;}
-}
-
-</style>
-<style id="pjm-header-unificado">
-.site-header .header-inner{display:flex;align-items:center;gap:28px;width:100%;}
-.site-header .brand{display:flex;align-items:center;flex:0 0 500px;min-width:0;}
-.site-header .brand img{flex:0 0 auto;}
-.site-header .brand-copy{white-space:nowrap;}
-.site-header .nav{display:flex;align-items:center;justify-content:flex-end;gap:27px;flex:1 1 auto;min-width:0;margin-left:auto;}
-.site-header .nav a{white-space:nowrap;display:inline-flex;align-items:center;font-size:13px;letter-spacing:.45px;}
-.site-header .menu-toggle{display:none;}
-@media (max-width:1250px){
- .site-header .header-inner{gap:18px;}
- .site-header .brand{flex-basis:410px;}
- .site-header .nav{gap:17px;}
- .site-header .nav a{font-size:12px;letter-spacing:.25px;}
-}
-@media (max-width:980px){
- .site-header .header-inner{gap:12px;}
- .site-header .brand{flex-basis:auto;flex:1 1 auto;}
- .site-header .nav{justify-content:flex-end;gap:12px;flex-wrap:wrap;}
- .site-header .nav a{font-size:11px;}
+@media(max-width:900px){
+ .site-header .header-inner{display:flex;min-height:88px;gap:12px;padding-right:16px;}
+ .site-header .brand{flex:1 1 auto;}
+ .site-header .brand img{width:58px;height:72px;}
+ .site-header .brand-copy strong{font-size:19px;}
+ .site-header .brand-copy small{font-size:9px;}
+ .site-header .brand-copy em{font-size:8px;letter-spacing:3px;}
+ .site-header .nav{display:none;position:absolute;left:0;right:0;top:100%;z-index:100;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;padding:12px 24px;background:#062219;}
+ .site-header .nav.open{display:flex;}
+ .site-header .nav a{justify-content:flex-start;padding:13px 0;font-size:12px;}
+ .site-header .nav a.active::after{left:auto;width:40px;right:auto;bottom:6px;}
+ .site-header .menu-toggle{display:block;margin-left:auto;background:transparent;border:0;color:inherit;font-size:26px;cursor:pointer;}
 }
 </style>
 </head>
