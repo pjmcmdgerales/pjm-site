@@ -8,106 +8,121 @@
 <title>Projeto Jovem Militar | Comando Geral</title>
 <link rel="icon" href="assets/brasao-comando-geral.png">
 <link rel="stylesheet" href="style.css">
-<style id="pjm-header-final">
-/* Cabeçalho PJM — distribuição ampla e limpa */
+<style>
+
+/* CABEÇALHO PJM — PADRÃO ÚNICO */
 .site-header .header-inner{
-  display:flex;
+  display:grid;
+  grid-template-columns: 520px minmax(0,1fr);
   align-items:center;
-  min-height:118px;
-  gap:28px;
+  column-gap:34px;
+  min-height:132px;
 }
 .site-header .brand{
   display:flex;
   align-items:center;
-  gap:18px;
-  flex:0 0 auto;
-  min-width:520px;
+  gap:16px;
+  min-width:0;
+  width:100%;
   text-decoration:none;
 }
 .site-header .brand img{
-  width:94px;
-  height:112px;
+  width:88px;
+  height:108px;
   object-fit:contain;
   flex:0 0 auto;
 }
 .site-header .brand-copy{
-  display:flex;
-  flex-direction:column;
   min-width:0;
   white-space:nowrap;
 }
 .site-header .brand-copy strong{
-  font-size:27px;
+  display:block;
+  font-size:26px;
   line-height:1.05;
-  letter-spacing:.25px;
+  white-space:nowrap;
 }
 .site-header .brand-copy small{
-  font-size:11.5px;
-  line-height:1.3;
-  margin-top:5px;
+  display:block;
+  margin-top:6px;
+  font-size:11px;
+  line-height:1.25;
+  white-space:nowrap;
 }
 .site-header .brand-copy em{
-  font-style:normal;
-  font-size:11px;
-  letter-spacing:6px;
+  display:block;
   margin-top:9px;
+  font-size:10px;
+  letter-spacing:6px;
+  font-style:normal;
+  white-space:nowrap;
 }
 .site-header .nav{
   display:flex;
   align-items:center;
   justify-content:flex-end;
-  gap:26px;
-  flex:1 1 auto;
+  gap:30px;
   min-width:0;
-  white-space:nowrap;
+  width:100%;
+  flex-wrap:nowrap;
 }
 .site-header .nav a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   white-space:nowrap;
   font-size:12.5px;
   letter-spacing:.35px;
   text-decoration:none;
+  position:relative;
+  padding:14px 0;
 }
-.site-header .nav a.active{position:relative;}
 .site-header .nav a.active::after{
   content:"";
   position:absolute;
   left:0;
   right:0;
-  bottom:-12px;
+  bottom:0;
   height:2px;
   background:currentColor;
 }
 .site-header .header-register{display:none !important;}
-@media(max-width:1350px){
-  .site-header .header-inner{gap:22px;}
-  .site-header .brand{min-width:465px;gap:15px;}
-  .site-header .brand img{width:82px;height:100px;}
-  .site-header .brand-copy strong{font-size:24px;}
-  .site-header .brand-copy small{font-size:10.5px;}
-  .site-header .brand-copy em{font-size:10px;letter-spacing:5px;}
-  .site-header .nav{gap:20px;}
+.site-header .menu-toggle{display:none;}
+
+@media (max-width:1400px){
+  .site-header .header-inner{grid-template-columns:470px minmax(0,1fr);column-gap:24px;}
+  .site-header .brand img{width:78px;height:96px;}
+  .site-header .brand-copy strong{font-size:23px;}
+  .site-header .brand-copy small{font-size:10px;}
+  .site-header .brand-copy em{font-size:9px;letter-spacing:5px;}
+  .site-header .nav{gap:22px;}
   .site-header .nav a{font-size:11.5px;}
 }
-@media(max-width:1120px){
-  .site-header .header-inner{gap:16px;}
-  .site-header .brand{min-width:390px;}
-  .site-header .brand img{width:72px;height:88px;}
-  .site-header .brand-copy strong{font-size:21px;}
-  .site-header .brand-copy small{font-size:9.5px;}
-  .site-header .brand-copy em{font-size:9px;letter-spacing:4px;}
-  .site-header .nav{gap:14px;}
+
+@media (max-width:1120px){
+  .site-header .header-inner{grid-template-columns:410px minmax(0,1fr);column-gap:18px;}
+  .site-header .brand img{width:70px;height:86px;}
+  .site-header .brand-copy strong{font-size:20px;}
+  .site-header .brand-copy small{font-size:9px;}
+  .site-header .brand-copy em{font-size:8px;letter-spacing:4px;}
+  .site-header .nav{gap:16px;}
   .site-header .nav a{font-size:10.5px;}
 }
-@media(max-width:900px){
-  .site-header .header-inner{min-height:88px;gap:12px;}
-  .site-header .brand{min-width:0;flex:1;}
+
+@media (max-width:900px){
+  .site-header .header-inner{display:flex;min-height:88px;gap:12px;}
+  .site-header .brand{flex:1;}
   .site-header .brand img{width:58px;height:72px;}
   .site-header .brand-copy strong{font-size:19px;}
   .site-header .brand-copy small{font-size:9px;}
   .site-header .brand-copy em{font-size:8px;letter-spacing:3px;}
-  .site-header .nav{display:none;}
-  .site-header .menu-toggle{display:block;margin-left:auto;}
+  .site-header .nav{display:none;position:absolute;left:0;right:0;top:100%;z-index:100;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;padding:12px 24px;background:#062219;}
+  .site-header .nav.open{display:flex;}
+  .site-header .nav a{justify-content:flex-start;padding:13px 0;font-size:12px;}
+  .site-header .nav a.active::after{left:auto;width:40px;right:auto;bottom:6px;}
+  .site-header .menu-toggle{display:block;margin-left:auto;background:transparent;border:0;color:inherit;font-size:26px;cursor:pointer;}
 }
+
 </style>
 </head>
 <body>
@@ -153,6 +168,26 @@
   setActive();
   window.addEventListener('hashchange',setActive);
   document.querySelectorAll('.site-header .nav a[data-page]').forEach(a=>a.addEventListener('click',()=>setTimeout(setActive,0)));
+})();
+</script>
+<script id="pjm-unified-header-script">
+(function(){
+  function setActive(){
+    var path=(location.pathname||'').toLowerCase();
+    var hash=(location.hash||'').toLowerCase();
+    var page='inicio';
+    if(path.indexOf('projeto.html')!==-1) page='projeto';
+    else if(path.indexOf('unidades.html')!==-1) page='unidades';
+    else if(path.indexOf('formacao.html')!==-1) page='formacao';
+    else if(path.indexOf('como-participar.html')!==-1) page='como';
+    else if(hash==='#contato') page='contato';
+    document.querySelectorAll('.site-header .nav a[data-page]').forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('data-page')===page);
+    });
+  }
+  setActive();
+  window.addEventListener('hashchange',setActive);
+  window.addEventListener('pageshow',setActive);
 })();
 </script>
 </body></html>
