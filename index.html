@@ -9,69 +9,29 @@
 <link rel="icon" href="assets/brasao-comando-geral.png">
 <link rel="stylesheet" href="style.css">
 
-<style id="pjm-menu-correction">
-/* Correção do cabeçalho após inclusão de COMO PARTICIPAR */
-.site-header .header-inner{
-  display:flex;
-  align-items:center;
-  gap:22px;
-}
-.site-header .brand{
-  flex:0 0 auto;
-  min-width:390px;
-}
-.site-header .brand-copy{
-  white-space:nowrap;
-}
-.site-header .brand-copy strong{
-  font-size:29px;
-  line-height:1.05;
-}
-.site-header .brand-copy small{
-  font-size:12px;
-  line-height:1.25;
-}
-.site-header .nav{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:22px;
-  flex:1 1 auto;
-  min-width:0;
-  flex-wrap:nowrap;
-}
-.site-header .nav a{
-  white-space:nowrap;
-  font-size:13px;
-  letter-spacing:.5px;
-}
-.site-header .header-register{
-  flex:0 0 auto;
-  white-space:nowrap;
-  font-size:13px;
-  padding:15px 20px;
-}
-@media (max-width:1250px){
-  .site-header .header-inner{gap:14px}
-  .site-header .brand{min-width:330px}
-  .site-header .brand-copy strong{font-size:24px}
-  .site-header .nav{gap:14px}
-  .site-header .nav a{font-size:12px}
-  .site-header .header-register{font-size:11px;padding:13px 15px}
-}
-@media (max-width:980px){
-  .site-header .nav{flex-wrap:wrap}
-  .site-header .brand{min-width:0}
-}
+<style id="pjm-header-layout-fix">
+/* Cabeçalho institucional — distribuição equilibrada no desktop */
+.site-header .header-inner{display:grid;grid-template-columns:minmax(390px,1fr) auto minmax(250px,1fr);align-items:center;column-gap:34px;min-height:120px;}
+.site-header .brand{min-width:0;display:flex;align-items:center;}
+.site-header .brand img{width:78px;height:100px;object-fit:contain;flex:0 0 auto;}
+.site-header .brand-copy{white-space:nowrap;}
+.site-header .brand-copy strong{font-size:27px;line-height:1.05;}
+.site-header .brand-copy small{font-size:11px;line-height:1.3;}
+.site-header .brand-copy em{font-size:12px;}
+.site-header .nav{display:flex;align-items:center;justify-content:center;gap:24px;white-space:nowrap;flex-wrap:nowrap;}
+.site-header .nav a{white-space:nowrap;font-size:13px;}
+.site-header .header-register{justify-self:end;white-space:nowrap;padding:14px 21px;font-size:12px;}
+@media (max-width:1350px){.site-header .header-inner{grid-template-columns:minmax(340px,1fr) auto auto;column-gap:22px}.site-header .nav{gap:17px}.site-header .nav a{font-size:12px}.site-header .brand-copy strong{font-size:24px}.site-header .header-register{padding:13px 16px;font-size:11px}}
+@media (max-width:1080px){.site-header .header-inner{display:flex;gap:16px}.site-header .brand{flex:1}.site-header .nav{gap:12px}.site-header .header-register{padding:12px 14px}.site-header .nav a{font-size:11px}}
+@media (max-width:900px){.site-header .nav{display:none}.site-header .menu-toggle{display:block;margin-left:auto}.site-header .header-register{display:none}.site-header .header-inner{min-height:90px}.site-header .brand img{width:58px;height:72px}.site-header .brand-copy strong{font-size:20px}}
 </style>
-
 </head>
 <body>
 <div class="topbar"><div class="container topbar-inner"><span>DISCIPLINA <i>•</i> CIDADANIA <i>•</i> UM FUTURO MELHOR</span><span class="social">SIGA-NOS: <a href="https://www.instagram.com/pjmcmdgerales/" target="_blank" rel="noopener">Instagram</a><a href="https://pjmcmdgerales.github.io/pjm-site/#contato">Facebook</a><a href="https://pjmcmdgerales.github.io/pjm-site/#contato">YouTube</a></span></div></div>
 <header class="site-header"><div class="container header-inner">
 <a class="brand" href="https://pjmcmdgerales.github.io/pjm-site/#inicio"><img src="assets/brasao-comando-geral.png" alt="Brasão do Comando Geral"><span class="brand-copy"><strong>PROJETO JOVEM MILITAR</strong><small>ESCOLA PREPARATÓRIA<br>PRÉ-MILITAR DO ESPÍRITO SANTO</small><em>COMANDO GERAL</em></span></a>
 <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
-<nav class="nav"><a class="active" href="https://pjmcmdgerales.github.io/pjm-site/#inicio">INÍCIO</a><a href="https://pjmcmdgerales.github.io/pjm-site/projeto.html">O PROJETO</a><a href="https://pjmcmdgerales.github.io/pjm-site/unidades.html">UNIDADES</a><a href="https://pjmcmdgerales.github.io/pjm-site/formacao.html">FORMAÇÃO</a><a href="https://pjmcmdgerales.github.io/pjm-site/como-participar.html">COMO PARTICIPAR</a><a href="https://pjmcmdgerales.github.io/pjm-site/#contato">CONTATO</a></nav>
+<nav class="nav"><a class="active" href="https://pjmcmdgerales.github.io/pjm-site/">INÍCIO</a><a href="https://pjmcmdgerales.github.io/pjm-site/projeto.html">O PROJETO</a><a href="https://pjmcmdgerales.github.io/pjm-site/unidades.html">UNIDADES</a><a href="https://pjmcmdgerales.github.io/pjm-site/formacao.html">FORMAÇÃO</a><a href="https://pjmcmdgerales.github.io/pjm-site/como-participar.html">COMO PARTICIPAR</a><a href="https://pjmcmdgerales.github.io/pjm-site/#contato">CONTATO</a></nav>
 <a class="header-register" href="https://pjmcmdgerales.github.io/pjm-site/inscricao.html"><span>♙</span> FAÇA SUA PRÉ-INSCRIÇÃO <b>→</b></a>
 </div></header>
 <main>
