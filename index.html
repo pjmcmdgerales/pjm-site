@@ -8,31 +8,114 @@
 <title>Projeto Jovem Militar | Comando Geral</title>
 <link rel="icon" href="assets/brasao-comando-geral.png">
 <link rel="stylesheet" href="style.css">
-
-<style id="pjm-header-layout-fix">
-/* Cabeçalho institucional — distribuição equilibrada no desktop */
-.site-header .header-inner{display:grid;grid-template-columns:minmax(390px,1fr) auto minmax(250px,1fr);align-items:center;column-gap:34px;min-height:120px;}
-.site-header .brand{min-width:0;display:flex;align-items:center;}
-.site-header .brand img{width:78px;height:100px;object-fit:contain;flex:0 0 auto;}
-.site-header .brand-copy{white-space:nowrap;}
-.site-header .brand-copy strong{font-size:27px;line-height:1.05;}
-.site-header .brand-copy small{font-size:11px;line-height:1.3;}
-.site-header .brand-copy em{font-size:12px;}
-.site-header .nav{display:flex;align-items:center;justify-content:center;gap:24px;white-space:nowrap;flex-wrap:nowrap;}
-.site-header .nav a{white-space:nowrap;font-size:13px;}
-.site-header .header-register{justify-self:end;white-space:nowrap;padding:14px 21px;font-size:12px;}
-@media (max-width:1350px){.site-header .header-inner{grid-template-columns:minmax(340px,1fr) auto auto;column-gap:22px}.site-header .nav{gap:17px}.site-header .nav a{font-size:12px}.site-header .brand-copy strong{font-size:24px}.site-header .header-register{padding:13px 16px;font-size:11px}}
-@media (max-width:1080px){.site-header .header-inner{display:flex;gap:16px}.site-header .brand{flex:1}.site-header .nav{gap:12px}.site-header .header-register{padding:12px 14px}.site-header .nav a{font-size:11px}}
-@media (max-width:900px){.site-header .nav{display:none}.site-header .menu-toggle{display:block;margin-left:auto}.site-header .header-register{display:none}.site-header .header-inner{min-height:90px}.site-header .brand img{width:58px;height:72px}.site-header .brand-copy strong{font-size:20px}}
+<style id="pjm-header-final">
+/* Cabeçalho PJM — distribuição ampla e limpa */
+.site-header .header-inner{
+  display:flex;
+  align-items:center;
+  min-height:118px;
+  gap:28px;
+}
+.site-header .brand{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex:0 0 auto;
+  min-width:520px;
+  text-decoration:none;
+}
+.site-header .brand img{
+  width:94px;
+  height:112px;
+  object-fit:contain;
+  flex:0 0 auto;
+}
+.site-header .brand-copy{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  white-space:nowrap;
+}
+.site-header .brand-copy strong{
+  font-size:27px;
+  line-height:1.05;
+  letter-spacing:.25px;
+}
+.site-header .brand-copy small{
+  font-size:11.5px;
+  line-height:1.3;
+  margin-top:5px;
+}
+.site-header .brand-copy em{
+  font-style:normal;
+  font-size:11px;
+  letter-spacing:6px;
+  margin-top:9px;
+}
+.site-header .nav{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:26px;
+  flex:1 1 auto;
+  min-width:0;
+  white-space:nowrap;
+}
+.site-header .nav a{
+  white-space:nowrap;
+  font-size:12.5px;
+  letter-spacing:.35px;
+  text-decoration:none;
+}
+.site-header .nav a.active{position:relative;}
+.site-header .nav a.active::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-12px;
+  height:2px;
+  background:currentColor;
+}
+.site-header .header-register{display:none !important;}
+@media(max-width:1350px){
+  .site-header .header-inner{gap:22px;}
+  .site-header .brand{min-width:465px;gap:15px;}
+  .site-header .brand img{width:82px;height:100px;}
+  .site-header .brand-copy strong{font-size:24px;}
+  .site-header .brand-copy small{font-size:10.5px;}
+  .site-header .brand-copy em{font-size:10px;letter-spacing:5px;}
+  .site-header .nav{gap:20px;}
+  .site-header .nav a{font-size:11.5px;}
+}
+@media(max-width:1120px){
+  .site-header .header-inner{gap:16px;}
+  .site-header .brand{min-width:390px;}
+  .site-header .brand img{width:72px;height:88px;}
+  .site-header .brand-copy strong{font-size:21px;}
+  .site-header .brand-copy small{font-size:9.5px;}
+  .site-header .brand-copy em{font-size:9px;letter-spacing:4px;}
+  .site-header .nav{gap:14px;}
+  .site-header .nav a{font-size:10.5px;}
+}
+@media(max-width:900px){
+  .site-header .header-inner{min-height:88px;gap:12px;}
+  .site-header .brand{min-width:0;flex:1;}
+  .site-header .brand img{width:58px;height:72px;}
+  .site-header .brand-copy strong{font-size:19px;}
+  .site-header .brand-copy small{font-size:9px;}
+  .site-header .brand-copy em{font-size:8px;letter-spacing:3px;}
+  .site-header .nav{display:none;}
+  .site-header .menu-toggle{display:block;margin-left:auto;}
+}
 </style>
 </head>
 <body>
 <div class="topbar"><div class="container topbar-inner"><span>DISCIPLINA <i>•</i> CIDADANIA <i>•</i> UM FUTURO MELHOR</span><span class="social">SIGA-NOS: <a href="https://www.instagram.com/pjmcmdgerales/" target="_blank" rel="noopener">Instagram</a><a href="https://pjmcmdgerales.github.io/pjm-site/#contato">Facebook</a><a href="https://pjmcmdgerales.github.io/pjm-site/#contato">YouTube</a></span></div></div>
 <header class="site-header"><div class="container header-inner">
-<a class="brand" href="https://pjmcmdgerales.github.io/pjm-site/#inicio"><img src="assets/brasao-comando-geral.png" alt="Brasão do Comando Geral"><span class="brand-copy"><strong>PROJETO JOVEM MILITAR</strong><small>ESCOLA PREPARATÓRIA<br>PRÉ-MILITAR DO ESPÍRITO SANTO</small><em>COMANDO GERAL</em></span></a>
+<a class="brand" href="https://pjmcmdgerales.github.io/pjm-site/"><img src="assets/brasao-comando-geral.png" alt="Brasão do Comando Geral"><span class="brand-copy"><strong>PROJETO JOVEM MILITAR</strong><small>ESCOLA PREPARATÓRIA<br>PRÉ-MILITAR DO ESPÍRITO SANTO</small><em>COMANDO GERAL</em></span></a>
 <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
-<nav class="nav"><a class="active" href="https://pjmcmdgerales.github.io/pjm-site/">INÍCIO</a><a href="https://pjmcmdgerales.github.io/pjm-site/projeto.html">O PROJETO</a><a href="https://pjmcmdgerales.github.io/pjm-site/unidades.html">UNIDADES</a><a href="https://pjmcmdgerales.github.io/pjm-site/formacao.html">FORMAÇÃO</a><a href="https://pjmcmdgerales.github.io/pjm-site/como-participar.html">COMO PARTICIPAR</a><a href="https://pjmcmdgerales.github.io/pjm-site/#contato">CONTATO</a></nav>
-<a class="header-register" href="https://pjmcmdgerales.github.io/pjm-site/inscricao.html"><span>♙</span> FAÇA SUA PRÉ-INSCRIÇÃO <b>→</b></a>
+<nav class="nav"><a data-page="inicio" href="https://pjmcmdgerales.github.io/pjm-site/">INÍCIO</a><a data-page="projeto" href="https://pjmcmdgerales.github.io/pjm-site/projeto.html">O PROJETO</a><a data-page="unidades" href="https://pjmcmdgerales.github.io/pjm-site/unidades.html">UNIDADES</a><a data-page="formacao" href="https://pjmcmdgerales.github.io/pjm-site/formacao.html">FORMAÇÃO</a><a data-page="como" href="https://pjmcmdgerales.github.io/pjm-site/como-participar.html">COMO PARTICIPAR</a><a data-page="contato" href="https://pjmcmdgerales.github.io/pjm-site/#contato">CONTATO</a></nav>
 </div></header>
 <main>
 <section class="hero" id="inicio"><div class="hero-photo"></div><div class="hero-overlay"></div><div class="container hero-content"><div class="hero-copy"><div class="eyebrow">DISCIPLINA • RESPEITO • FOCO • LIDERANÇA</div><h1>Jovens mais fortes<br>para um Brasil<br><span>melhor.</span></h1><div class="rule"></div><p>O Projeto Jovem Militar é uma escola preparatória que desenvolve disciplina, formação e cidadania, preparando jovens para os desafios da vida.</p><a class="light-button" href="https://pjmcmdgerales.github.io/pjm-site/projeto.html">CONHEÇA O PROJETO <b>→</b></a></div><div class="hero-side">CARÁTER<br>DISCIPLINA<br>CONQUISTAS<br>SEMPRE<div></div></div></div></section>
@@ -54,4 +137,22 @@
 <footer><div class="container footer-grid"><div><b>PROJETO JOVEM MILITAR</b><span>COMANDO GERAL<br>ESPÍRITO SANTO</span></div><div><b>ACESSO RÁPIDO</b><a href="https://pjmcmdgerales.github.io/pjm-site/#inicio">Início</a><a href="https://pjmcmdgerales.github.io/pjm-site/projeto.html">O Projeto</a><a href="https://pjmcmdgerales.github.io/pjm-site/unidades.html">Unidades</a><a href="https://pjmcmdgerales.github.io/pjm-site/formacao.html">Formação</a><a href="https://pjmcmdgerales.github.io/pjm-site/como-participar.html">Como Participar</a><a href="https://pjmcmdgerales.github.io/pjm-site/#contato">Contato</a></div><div><b>CONTATO</b><span>@pjmcmdgerales</span><span>pjmcmdgerales@gmail.com</span><span>(27) 99731-0707</span></div></div><div class="footer-bottom">© 2026 Projeto Jovem Militar | Comando Geral — Espírito Santo <span>DISCIPLINA • CIDADANIA • UM FUTURO MELHOR</span></div></footer>
 <a class="wa" href="https://wa.me/5527997310707?text=Ol%C3%A1!%20Gostaria%20de%20obter%20informa%C3%A7%C3%B5es%20sobre%20o%20Projeto%20Jovem%20Militar." target="_blank" rel="noopener">WHATSAPP</a>
 <script src="script.js?v=20260908"></script>
+<script>
+(function(){
+  function setActive(){
+    const path=window.location.pathname;
+    const hash=window.location.hash;
+    let page='inicio';
+    if(path.endsWith('/projeto.html')) page='projeto';
+    else if(path.endsWith('/unidades.html')) page='unidades';
+    else if(path.endsWith('/formacao.html')) page='formacao';
+    else if(path.endsWith('/como-participar.html')) page='como';
+    else if((path.endsWith('/index.html') || path.endsWith('/pjm-site/') || path.endsWith('/pjm-site')) && hash==='#contato') page='contato';
+    document.querySelectorAll('.site-header .nav a[data-page]').forEach(a=>a.classList.toggle('active',a.dataset.page===page));
+  }
+  setActive();
+  window.addEventListener('hashchange',setActive);
+  document.querySelectorAll('.site-header .nav a[data-page]').forEach(a=>a.addEventListener('click',()=>setTimeout(setActive,0)));
+})();
+</script>
 </body></html>
