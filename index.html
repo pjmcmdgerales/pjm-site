@@ -8,6 +8,63 @@
 <title>Projeto Jovem Militar | Comando Geral</title>
 <link rel="icon" href="assets/brasao-comando-geral.png">
 <link rel="stylesheet" href="style.css">
+
+<style id="pjm-menu-correction">
+/* Correção do cabeçalho após inclusão de COMO PARTICIPAR */
+.site-header .header-inner{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+.site-header .brand{
+  flex:0 0 auto;
+  min-width:390px;
+}
+.site-header .brand-copy{
+  white-space:nowrap;
+}
+.site-header .brand-copy strong{
+  font-size:29px;
+  line-height:1.05;
+}
+.site-header .brand-copy small{
+  font-size:12px;
+  line-height:1.25;
+}
+.site-header .nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+  flex:1 1 auto;
+  min-width:0;
+  flex-wrap:nowrap;
+}
+.site-header .nav a{
+  white-space:nowrap;
+  font-size:13px;
+  letter-spacing:.5px;
+}
+.site-header .header-register{
+  flex:0 0 auto;
+  white-space:nowrap;
+  font-size:13px;
+  padding:15px 20px;
+}
+@media (max-width:1250px){
+  .site-header .header-inner{gap:14px}
+  .site-header .brand{min-width:330px}
+  .site-header .brand-copy strong{font-size:24px}
+  .site-header .nav{gap:14px}
+  .site-header .nav a{font-size:12px}
+  .site-header .header-register{font-size:11px;padding:13px 15px}
+}
+@media (max-width:980px){
+  .site-header .nav{flex-wrap:wrap}
+  .site-header .brand{min-width:0}
+}
+</style>
+
 </head>
 <body>
 <div class="topbar"><div class="container topbar-inner"><span>DISCIPLINA <i>•</i> CIDADANIA <i>•</i> UM FUTURO MELHOR</span><span class="social">SIGA-NOS: <a href="https://www.instagram.com/pjmcmdgerales/" target="_blank" rel="noopener">Instagram</a><a href="https://pjmcmdgerales.github.io/pjm-site/#contato">Facebook</a><a href="https://pjmcmdgerales.github.io/pjm-site/#contato">YouTube</a></span></div></div>
